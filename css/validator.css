@@ -1,0 +1,47 @@
+#map
+{
+    height:300px;
+    width: 40%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+#enteredAddress, #googlesAddress
+{
+    display: inline-block;
+    margin-left:20%;
+}
+#gallery
+{
+    padding:80px;   
+}
+h2
+{
+    text-align: center;
+}
+.formulario{
+    margin-right:20px;
+    width: 300px;
+    height:45px;
+    font-size: 0.7em;
+    margin-bottom: 20px;
+
+}
+#submitButton
+{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.validated
+{
+    color: #22ff1f;
+}
+.error
+{
+    color: #fa0a26;
+}
+#statusIconverified
+{
+    display: none;
+}

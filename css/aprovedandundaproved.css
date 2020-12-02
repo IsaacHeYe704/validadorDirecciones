@@ -1,0 +1,62 @@
+#formularioCustomer
+{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.formSubgroup
+{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.formSubgroup lable
+{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.formSubgroup input
+{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14 px;
+}
+.formSubgroup.success input
+{
+    border-color: #2ecc71;
+}
+.formSubgroup.errorCustomer input
+{
+    border-color: #e74c3c;
+}
+
+.formSubgroup i 
+{
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    visibility: hidden;
+}
+.formSubgroup.success i.fa-check-circle
+{
+    color: #2ecc71;
+   visibility: visible;
+}
+.formSubgroup.errorCustomer i.fa-exclamation-circle
+{
+    color: #e74c3c;
+   visibility: visible;
+}
+.formSubgroup small
+{
+    visibility: hidden;
+}
+.formSubgroup.errorCustomer small
+{
+    color: #e74c3c;
+    visibility: visible;
+}
