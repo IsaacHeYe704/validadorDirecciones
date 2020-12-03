@@ -103,7 +103,7 @@ function directionLableUpdate()
     
     if(document.getElementById("citySelector").value != "Seleccione")
     {
-        document.getElementById("cityLable").innerHTML = document.getElementById("citySelector").value.split(",")[0] + " "+ document.getElementById("citySelector").value.split(",")[1];
+        document.getElementById("cityLable").innerHTML = removeAccents(document.getElementById("citySelector").value.split(",")[0] + " "+ document.getElementById("citySelector").value.split(",")[1]);
         document.getElementById("cityLableDiv").className = "formatSubgroup success";
     }else
     {

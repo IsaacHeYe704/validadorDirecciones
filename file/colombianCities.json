@@ -231,9 +231,6 @@
         "nombre": "Bello Antioquia"
     },
     {
-        "nombre": "Bogotá"
-    },
-    {
         "nombre": "Bucaramanga Santander"
     },
     {
@@ -259,6 +256,9 @@
     },
     {
         "nombre": "Chia Cundinamarca"
+    },
+        {
+        "nombre": "cota"
     },
     {
         "nombre": "Ciénaga Magdalena"
