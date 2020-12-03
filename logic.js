@@ -1,9 +1,9 @@
 var xhttp = new XMLHttpRequest();
 var xhttp2 = new XMLHttpRequest();
-var lat;
-var lng;
+var lat=0;
+var lng=0;
 var direction = "mi dirección: ";
-var responceAddress;
+var responceAddress="";
 
 window.onload = function () {
     xhttp2.open("GET", "./file/letras.json", true);
@@ -54,7 +54,7 @@ function fillCitySelector1(jsonResponse) {
 }
 function fillCitySelector2(jsonResponse) {
     var jsonObject1 = JSON.parse(jsonResponse);
-    var selectOption1 = "<option value=\"Seleccione\">SELECCIONE LETRA</option><option value=\" \">NINGUNA</option>";
+    var selectOption1 = "<option value=\" \">NINGUNA</option>";
     for (var i = 0; i < jsonObject1.length; i++)
     {
         var letra = jsonObject1[i];
@@ -70,7 +70,6 @@ function validarExistencia()
 
     var direccionBuscada = document.getElementById("tipoDeViaSelector").value + "+" + document.getElementById("num1").value + document.getElementById("letra1").value + "+" + document.getElementById("num2").value + document.getElementById("letra2").value + "+" + document.getElementById("num3").value;
     var ciudad = document.getElementById("citySelector").value;
-    var loQueSeBusca = "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccionBuscada + ciudad + "&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg" + "\"";
     direction = direccionBuscada + ciudad;
     xhttp3.onreadystatechange = function ()
     {
@@ -80,7 +79,7 @@ function validarExistencia()
         }
     };
 
-    xhttp3.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccionBuscada + "+" + ciudad + "&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg", false);
+    xhttp3.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccionBuscada + "+" + ciudad + "&key=AIzaSyDSdKGz-2F7UpjeduTxOFAghBpfOAKq4qM", true);
     //alert("https://maps.googleapis.com/maps/api/geocode/json?address="+direccionBuscada+"+"+ciudad+"&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg");
     xhttp3.send();
 }
@@ -101,7 +100,17 @@ function directionLableUpdate()
     document.getElementById("direccionLable").textContent = getvalues();
     document.getElementById("enteredDireccionLable").innerHTML = getvalues();
     document.getElementById("complementLable").innerHTML = document.getElementById("complementoGeneral").value;
-
+    
+    if(document.getElementById("citySelector").value != "Seleccione")
+    {
+        document.getElementById("cityLable").innerHTML = document.getElementById("citySelector").value.split(",")[0] + " "+ document.getElementById("citySelector").value.split(",")[1];
+        document.getElementById("cityLableDiv").className = "formatSubgroup success";
+    }else
+    {
+        document.getElementById("cityLable").innerHTML = "";
+        document.getElementById("cityLableDiv").className = "formatSubgroup errorFormat";
+    }
+    
     //direction = direccionBuscada + ciudad;
     isCorrect();
 }
@@ -131,7 +140,8 @@ function getvalues()
 }
 function isCorrect()
 {
-    if (document.getElementById("direccionLable").textContent.toLowerCase() == (responceAddress.toLowerCase()))
+
+    if (document.getElementById("direccionLable").textContent.toLowerCase().replace(/ /g, "") == (responceAddress.toLowerCase().replace(/ /g, "")) && document.getElementById("direccionLable").textContent.toLowerCase()!="")
     {
         document.getElementById("direccionResponseLable").classList.remove('error');
         document.getElementById("direccionLable").classList.add('validated');
@@ -140,6 +150,8 @@ function isCorrect()
 
         document.getElementById("statusIconverified").style.display = "block";
         document.getElementById("statusIcon").style.display = "none";
+        document.getElementById("enteredDireccionLableDiv").className = "formatSubgroup success ";
+
     } else
     {
         document.getElementById("direccionResponseLable").classList.add('error');
@@ -149,6 +161,16 @@ function isCorrect()
 
         document.getElementById("statusIconverified").style.display = "none";
         document.getElementById("statusIcon").style.display = "block";
-
+        document.getElementById("enteredDireccionLableDiv").className = "formatSubgroup errorFormat";
     }
+    
+    if(document.getElementById("complementoGeneral").value.length <30 && document.getElementById("complementoGeneral").value.length !=0)
+        document.getElementById("complementLableDiv").className = "formatSubgroup success ";
+    else 
+        document.getElementById("complementLableDiv").className = "formatSubgroup errorFormat";
+}
+
+function removeAccents(cadena){
+	const acentos = {'á':'a','é':'e','í':'i','ó':'o','ú':'u','Á':'A','É':'E','Í':'I','Ó':'O','Ú':'U'};
+	return cadena.split('').map( letra => acentos[letra] || letra).join('').toString();	
 }

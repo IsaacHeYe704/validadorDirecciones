@@ -17,7 +17,6 @@
         TemplateMo 554 Ocean Vibes
         fa-check-square
         https://templatemo.com/tm-554-ocean-vibes
-        
         -->
 
     </head>
@@ -34,14 +33,14 @@
                     <!-- gallery -->
                     <li class="tm-nav-item">
                         <div  data-effect="mfp-move-from-top" class="tm-nav-link">
-                            Status
+                            Address status
                             <i class="fas fa-3x fa-times-circle" id="statusIcon"></i>
                             <i class="fas fa-3x fa-check-square" id="statusIconverified"></i>
                         </div> 
                     </li>
                     <li class="tm-nav-item">
                         <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                            Validate
+                            Address
                             <i class="fas fa-3x fa-pen-square "></i>
                         </a>
                     </li>
@@ -51,16 +50,33 @@
                             <i class="fas fa-3x fa-user-circle"></i>
                         </a> 
                     </li>
-                    <li class="tm-nav-item">
-                        <h3>dirección ingresada: </h3>
-                        <p id="enteredDireccionLable"><p>
-                    </li>
-                    <li class="tm-nav-item">
-                        <h3>complemento: </h3>
-                        <p id="complementLable"><p>
-                    </li>
-
                 </ul>
+                <div  id="format">
+                    <h2 class="formItem">Ship to: </h2>
+                    <div class="formatSubgroup " id="customerNameLable">
+                        <h2 class="formItem"><small id="customerNameTextLable"></small><i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                        
+                        
+                    </div>
+                    <div class="formatSubgroup  " id="pocLable">
+                        <h2 class="formItem"><small id="pocTextLable"></small><i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                    </div>
+                    <div class="formatSubgroup " id="enteredDireccionLableDiv">
+                        <h2 class="formItem"> <small id="enteredDireccionLable"></small> <i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                    </div>
+                    <div class="formatSubgroup " id="complementLableDiv">
+                        <h2 class="formItem"><small  id="complementLable"></small> <i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                    </div>
+                    <div class="formatSubgroup" id="cityLableDiv">
+                        <h2 class="formItem"><small id="cityLable"></small><i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                        
+                    </div>
+                    <div class="formatSubgroup" id="phoneLable">
+                        <h2 class="formItem"><small id="phoneTextLable"></small><i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                        
+                    </div>
+                    
+                </div>
             </nav>
 
             <!-- Popup itself -->
@@ -69,9 +85,9 @@
                 <div id="formularioContainer">
                     <select id="citySelector" onchange="directionLableUpdate()" class="formulario" ></select>
                     <select id="tipoDeViaSelector" onchange="directionLableUpdate()" class="formulario">
-                        <option>SELECCIONE TIPO DE VIA</option>
+                        <option value="0">SELECCIONE TIPO DE VIA</option>
                         <option value="cl.">CALLE</option>
-                        <option value="cra">CARRERA</option>
+                        <option value="cra.">CARRERA</option>
                         <option>CARRETERA</option>
                         <option>CIRCUMVALAR</option>
                         <option>MANGA</option>
@@ -86,7 +102,6 @@
 
                     <input type="text" id="num3" placeholder="número" oninput="directionLableUpdate()" class="formulario">
                     <select id="complemento1" onchange="directionLableUpdate()" class="formulario">
-                        <option value="SELECCIONE">SELECCIONE COMPLEMENTO</option>
                         <option value="NORTE">NORTE</option>
                         <option value="SUR">SUR</option>
                     </select>
@@ -102,13 +117,12 @@
                     <h3>dirección validada: </h3>
                     <p id="direccionResponseLable" class=""> </p>
                 </div>
-
                 <div id="map" >
 
                 </div>
 
                 <script defer
-                        src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDSdKGz-2F7UpjeduTxOFAghBpfOAKq4qM &callback=initMap">
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSdKGz-2F7UpjeduTxOFAghBpfOAKq4qM &callback=initMap">
                 </script>
             </div>
 
@@ -116,27 +130,27 @@
                 <h2>Customer Information</h2>
                 <div id="formularioCustomer">
                     <div class="formSubgroup" id="customerName">
-                        <label>Nombre del cliente: </label>
-                        <input type="text"  id="customerNameText" name="input" placeholder="Nombre" oninput="validateLength('customerName')"  >
+                        <label>Company: </label>
+                        <input type="text"  id="customerNameText" name="input" placeholder="Name" oninput="validateLength('customerName')"  >
                         <i class="fas fa-check-circle" ></i>
                         <i class="fas fa-exclamation-circle" ></i>
                         <small><b>Este campo debe ser de menos de 30 caracteres</b></small>
                     </div>
                     <div class="formSubgroup" id="poc">
-                        <label>Poc of delivery:</label>
+                        <label>Contact: (POC)</label>
                         <input type="text" id="pocText" name="input" placeholder="Name" oninput="validateLength('poc')"  >
                         <i class="fas fa-check-circle" ></i>
                         <i class="fas fa-exclamation-circle" ></i>
                         <small><b>Este campo debe ser de menos de 30 caracteres</b></small>
                     </div>
                     <div class="formSubgroup" id="phone">
-                        <label>Telefono de contacto:</label>
-                        <input type="text" id="phoneText" name="input" placeholder="Número" oninput="validateLength('phone')" >
+                        <label>Contact phone:</label>
+                        <input type="text" id="phoneText" name="input" placeholder="Number" oninput="validateLength('phone')" >
                         <i class="fas fa-check-circle" ></i>
                         <i class="fas fa-exclamation-circle" ></i>
                         <small id="phoneError"><b>Este campo debe ser de menos de 30 caracteres</b></small>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -150,7 +164,7 @@
         </div>
 
         <footer class="tm-footer">
-            <span>Copyright &copy; 2020</span>
+            <span>Copyright &copy;  2020 version 1.1.1-beta</span>
             <span>Web Developed by Isaac Herrera</span>
         </footer>
 

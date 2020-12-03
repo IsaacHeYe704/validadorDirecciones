@@ -45,3 +45,22 @@ h2
 {
     display: none;
 }
+#format
+{
+    display:block;
+    width:100%;
+    
+   
+}
+#inline-popups
+{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+

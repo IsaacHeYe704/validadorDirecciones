@@ -60,3 +60,44 @@
     color: #e74c3c;
     visibility: visible;
 }
+
+
+
+.formatSubgroup
+{
+
+    position: relative;
+}
+
+.formatSubgroup h1
+{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+.formatSubgroup.success h2
+{
+    color: #2ecc71;
+}
+.formatSubgroup.errorFormat h2
+{
+    color: #e74c3c;
+}
+
+.formatSubgroup i 
+{
+    position: relative;
+    left: 20px;
+    visibility: hidden;
+}
+.formatSubgroup.success i.fa-check-circle
+{
+    color: #2ecc71;
+   visibility: visible;
+}
+.formatSubgroup.errorFormat i.fa-exclamation-circle
+{
+    color: #e74c3c;
+   visibility: visible;
+}
