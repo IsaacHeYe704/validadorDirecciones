@@ -10,6 +10,7 @@ window.onload = function () {
     xhttp2.send();
     xhttp.open("GET", "./file/colombianCities.json", true);
     xhttp.send();
+    removeDouble("calle 134a ##57a 55");
 };
 function initMap()
 {
@@ -141,7 +142,7 @@ function getvalues()
 function isCorrect()
 {
 
-    if (document.getElementById("direccionLable").textContent.toLowerCase().replace(/ /g, "") == (responceAddress.toLowerCase().replace(/ /g, "")) && document.getElementById("direccionLable").textContent.toLowerCase()!="")
+    if (document.getElementById("direccionLable").textContent.toLowerCase().replace(/ /g, "") == (removeDouble(responceAddress).toLowerCase().replace(/ /g, "")) && document.getElementById("direccionLable").textContent.toLowerCase()!="")
     {
         document.getElementById("direccionResponseLable").classList.remove('error');
         document.getElementById("direccionLable").classList.add('validated');
@@ -174,3 +175,35 @@ function removeAccents(cadena){
 	const acentos = {'á':'a','é':'e','í':'i','ó':'o','ú':'u','Á':'A','É':'E','Í':'I','Ó':'O','Ú':'U'};
 	return cadena.split('').map( letra => acentos[letra] || letra).join('').toString();	
 }
+
+function removeDouble(text)
+{
+    var aux=text.split("##");
+    var result ;
+    if(aux.length > 1)
+    {
+        result = aux[0] + "#" + aux[1];
+        
+    }else
+    {
+        result = text;
+    }
+    return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
