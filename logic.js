@@ -149,8 +149,6 @@ function isCorrect()
         document.getElementById("direccionLable").classList.remove('error');
         document.getElementById("direccionResponseLable").classList.add('validated');
 
-        document.getElementById("statusIconverified").style.display = "block";
-        document.getElementById("statusIcon").style.display = "none";
         document.getElementById("enteredDireccionLableDiv").className = "formatSubgroup success ";
 
     } else
@@ -160,8 +158,6 @@ function isCorrect()
         document.getElementById("direccionLable").classList.add('error');
         document.getElementById("direccionResponseLable").classList.remove('validated');
 
-        document.getElementById("statusIconverified").style.display = "none";
-        document.getElementById("statusIcon").style.display = "block";
         document.getElementById("enteredDireccionLableDiv").className = "formatSubgroup errorFormat";
     }
     
@@ -189,6 +185,24 @@ function removeDouble(text)
         result = text;
     }
     return result;
+}
+
+function copy()
+{
+    var NameTextLable = document.getElementById("customerNameTextLable").textContent;
+    var pocTextLable = document.getElementById("pocTextLable").textContent;
+    var enteredDireccionLable = document.getElementById('enteredDireccionLable').textContent;
+    var complementLable = document.getElementById("complementLable").textContent;
+    var cityLable = document.getElementById("cityLable").textContent;
+    var phoneTextLable = document.getElementById("phoneTextLable").textContent;
+    var dummyContent = NameTextLable + " \n"+pocTextLable+ " \n"+enteredDireccionLable+ " \n"+complementLable+ " \n "+cityLable+ " \n"+ phoneTextLable;
+    if (NameTextLable == "" || pocTextLable == "" || enteredDireccionLable == "" || complementLable ==""||cityLable=="" || phoneTextLable == "")
+    {
+        alert("message copied but you havent entered all info, please check it");
+    }
+    var dummy = $('<textarea>').val(dummyContent).appendTo('body').select();
+    document.execCommand('copy');
+    $(dummy).remove();
 }
 
 

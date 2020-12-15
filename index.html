@@ -23,7 +23,6 @@
     <body>
         <header class="tm-site-header">
             <h1 class="tm-mt-0 tm-mb-15"><span class="tm-color-primary">Address</span> <span class="tm-color-gray-2">validation</span></h1>
-            <em class="tm-tagline tm-color-light-gray">Colombia</em>
         </header>
 
 
@@ -32,102 +31,52 @@
                 <ul id="inline-popups">
                     <!-- gallery -->
                     <li class="tm-nav-item">
-                        <div  data-effect="mfp-move-from-top" class="tm-nav-link">
-                            Address status
-                            <i class="fas fa-3x fa-times-circle" id="statusIcon"></i>
-                            <i class="fas fa-3x fa-check-square" id="statusIconverified"></i>
-                        </div> 
+                            <a href="#Instructions" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
+                                Instructions
+                                <i class="fas fa-3x fa-book"></i>
+                            </a>
                     </li>
                     <li class="tm-nav-item">
                         <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                            Address
+                            formulary
                             <i class="fas fa-3x fa-pen-square "></i>
                         </a>
-                    </li>
-                    <li class="tm-nav-item">
-                        <a href="#receiver" data-effect="mfp-move-from-top" class="tm-nav-link">
-                            Customer INFO
-                            <i class="fas fa-3x fa-user-circle"></i>
-                        </a> 
                     </li>
                 </ul>
                 <div  id="format">
                     <h2 class="formItem">Ship to: </h2>
                     <div class="formatSubgroup " id="customerNameLable">
-                        <h2 class="formItem"><small id="customerNameTextLable"></small><i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
-                        
-                        
+                        <h2 class="formItem"><small id="customerNameTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
                     </div>
                     <div class="formatSubgroup  " id="pocLable">
-                        <h2 class="formItem"><small id="pocTextLable"></small><i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="pocTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas  fa-xs fa-exclamation-circle" ></i></h2>
                     </div>
                     <div class="formatSubgroup " id="enteredDireccionLableDiv">
-                        <h2 class="formItem"> <small id="enteredDireccionLable"></small> <i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"> <small id="enteredDireccionLable"></small> <i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
                     </div>
                     <div class="formatSubgroup " id="complementLableDiv">
-                        <h2 class="formItem"><small  id="complementLable"></small> <i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small  id="complementLable"></small> <i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
                     </div>
                     <div class="formatSubgroup" id="cityLableDiv">
-                        <h2 class="formItem"><small id="cityLable"></small><i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="cityLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
                         
                     </div>
                     <div class="formatSubgroup" id="phoneLable">
-                        <h2 class="formItem"><small id="phoneTextLable"></small><i class="fas fa-check-circle" ></i><i class="fas fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="phoneTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
                         
                     </div>
                     
                 </div>
+                <div class="w-33">
+                    <div class="center">
+                        <button  id="myButton"  onclick="copy()">Copy information </button>
+                    </div>
+                </div>
+                
             </nav>
 
             <!-- Popup itself -->
             <div id="gallery" class="popup mfp-with-anim mfp-hide tm-bg-gray">
-                <h2>Validar la direción</h2>
-                <div id="formularioContainer">
-                    <select id="citySelector" onchange="directionLableUpdate()" class="formulario" ></select>
-                    <select id="tipoDeViaSelector" onchange="directionLableUpdate()" class="formulario">
-                        <option value="0">SELECCIONE TIPO DE VIA</option>
-                        <option>AVENIDA CARRERA</option>
-                        <option value="cl.">CALLE</option>
-                        <option value="cra.">CARRERA</option>
-                        <option>CARRETERA</option>
-                        <option>CIRCUMVALAR</option>
-                        <option>MANGA</option>
-                        <option>KILOMETRO</option>
-                        <option>MANZANA</option>
-                    </select>
-                    <input type="text" id="num1" name="input" placeholder="número" oninput="directionLableUpdate()" class="formulario">
-                    <select id="letra1" onchange="directionLableUpdate()" class="formulario"></select>
-
-                    <input type="text" id="num2" placeholder="número" oninput="directionLableUpdate()" class="formulario">
-                    <select id="letra2" onchange="directionLableUpdate()" class="formulario"></select>
-
-                    <input type="text" id="num3" placeholder="número" oninput="directionLableUpdate()" class="formulario">
-                    <select id="complemento1" onchange="directionLableUpdate()" class="formulario">
-                        <option value="NORTE">NORTE</option>
-                        <option value="SUR">SUR</option>
-                    </select>
-                    <input type="text" id="complementoGeneral" placeholder="complemento: conjunto, torre, apartamento" oninput="directionLableUpdate()" class="formulario">
-                    <button id="submitButton" onclick="validarExistencia()" class="formulario" >VALIDAR</button>
-                </div>
-
-                <div id="enteredAddress" >
-                    <h3>dirección ingresada: </h3>
-                    <p id="direccionLable" class=""><p>
-                </div >
-                <div id="googlesAddress">
-                    <h3>dirección validada: </h3>
-                    <p id="direccionResponseLable" class=""> </p>
-                </div>
-                <div id="map" >
-
-                </div>
-
-                <script defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSdKGz-2F7UpjeduTxOFAghBpfOAKq4qM &callback=initMap">
-                </script>
-            </div>
-
-            <div id="receiver" class="popup mfp-with-anim mfp-hide tm-bg-gray">
                 <h2>Customer Information</h2>
                 <div id="formularioCustomer">
                     <div class="formSubgroup" id="customerName">
@@ -153,6 +102,66 @@
                     </div>
 
                 </div>
+                <h2>Address validator: </h2>
+                <div id="formularioContainer">
+                    <select id="citySelector" onchange="directionLableUpdate()" class="formulario" ></select>
+                    <select id="tipoDeViaSelector" onchange="directionLableUpdate()" class="formulario">
+                        <option value="0">SELECCIONE TIPO DE VIA</option>
+                        <option>AVENIDA CARRERA</option>
+                        <option value="cl.">CALLE</option>
+                        <option value="cra.">CARRERA</option>
+                        <option>CARRETERA</option>
+                        <option>CIRCUMVALAR</option>
+                        <option>MANGA</option>
+                        <option>KILOMETRO</option>
+                        <option>MANZANA</option>
+                    </select>
+                    <input type="text" id="num1" name="input" placeholder="número" oninput="directionLableUpdate()" class="formulario">
+                    <select id="letra1" onchange="directionLableUpdate()" class="formulario"></select>
+
+                    <input type="text" id="num2" placeholder="número" oninput="directionLableUpdate()" class="formulario">
+                    <select id="letra2" onchange="directionLableUpdate()" class="formulario"></select>
+
+                    <input type="text" id="num3" placeholder="número" oninput="directionLableUpdate()" class="formulario">
+                    <select id="complemento1" onchange="directionLableUpdate()" class="formulario">
+                        <option value="NORTE">NORTE</option>
+                        <option value="SUR">SUR</option>
+                    </select>
+                    <input type="text" id="complementoGeneral" placeholder="complemento: conjunto, torre, apartamento" oninput="directionLableUpdate()" class="formulario">
+                    <button id="submitButton" onclick="validarExistencia()" class="formulario" >validate</button>
+                </div>
+
+                <div id="enteredAddress" >
+                    <h3>Entered address: </h3>
+                    <p id="direccionLable" class=""><p>
+                </div >
+                <div id="googlesAddress">
+                    <h3>Certified address: </h3>
+                    <p id="direccionResponseLable" class=""> </p>
+                </div>
+                <div id="map" >
+
+                </div>
+                <div id="Instructions" class="popup mfp-with-anim mfp-hide tm-bg-gray">
+                    <div>
+                        <h1 id="instructionTitle">How to use this web app</h1>
+                        <p>
+                            1) Open the formulary section .  <i class="fas fa-1x fa-pen-square "></i> <br><br>
+                            2) Fill the customer information that is ask, and scroll down. <br><br>
+                            3) Fill the address information them click on validate, now you will see the address that you described in <b> entered address</b> and in <b>certified address</b> an address that exists and is the closest we can find , if you see this fields writen in green it means you address is certified to be correct, if not please check.<br><br>
+                            4) Close the formulary section by clicking on the edges of the window.<br><br>
+                            5) Now you will see all the information you entered formed below the ship to title, all text must be green, red means there is a error.<br><br>
+                            6) by clicking on copy information you will be able to copy all data in order to your clipboard.
+                        </p>
+                    </div>
+                </div>
+                <script defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSdKGz-2F7UpjeduTxOFAghBpfOAKq4qM &callback=initMap">
+                </script>
+            </div>
+
+            <div id="receiver" class="popup mfp-with-anim mfp-hide tm-bg-gray">
+                
             </div>
 
             <div id="about" class="popup mfp-with-anim mfp-hide tm-bg-gray">
@@ -165,7 +174,7 @@
         </div>
 
         <footer class="tm-footer">
-            <span>Copyright &copy;  2020 version 1.1.2-beta</span>
+            <span>Copyright &copy;  2020 version 1.2.0-beta</span>
             <span>Web Developed by Isaac Herrera</span>
         </footer>
 

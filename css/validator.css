@@ -57,10 +57,59 @@ h2
     display: flex;
     justify-content: center;
 }
+.centrar
+{
+   position: relative;
+   left: 70%;
+ 
+   margin: -15% 0 0 -25%;
+   margin-top:-30px;
+}
+#myButton {
+	background-color:#5e8deb;
+	border-radius:24px;
+	border:3px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 15px;
+	text-decoration:none;
+	text-shadow:-1px 4px 13px #283966;
+}
+#myButton:hover {
+	background-color:#2a5487;
+}
+#myButton:active {
+	position:relative;
+	top:1px;
+}
+div.w-33 {
+  width: 100%;
+}
+
+div.center {
+  text-align: center;
+  margin-top: 50px;
+}
 
 
+#instructionTitle
+{
+    text-align: center;
+    margin-bottom: 100px;
+}
+#Instructions
+{
+    padding: 50px;
+}
+#Instructions p
+{
+    font-size: 1.5em;
 
 
+}
 
 
 
