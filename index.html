@@ -31,14 +31,14 @@
                 <ul id="inline-popups">
                     <!-- gallery -->
                     <li class="tm-nav-item">
-                            <a href="#Instructions" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                                Instructions
-                                <i class="fas fa-3x fa-book"></i>
-                            </a>
+                        <a href="#Instructions" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
+                            Instructions
+                            <i class="fas fa-3x fa-book"></i>
+                        </a>
                     </li>
                     <li class="tm-nav-item">
                         <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                            formulary
+                            Form
                             <i class="fas fa-3x fa-pen-square "></i>
                         </a>
                     </li>
@@ -59,26 +59,36 @@
                     </div>
                     <div class="formatSubgroup" id="cityLableDiv">
                         <h2 class="formItem"><small id="cityLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
-                        
+
                     </div>
                     <div class="formatSubgroup" id="phoneLable">
                         <h2 class="formItem"><small id="phoneTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
-                        
+
                     </div>
-                    
+
                 </div>
                 <div class="w-33">
                     <div class="center">
                         <button  id="myButton"  onclick="copy()">Copy information </button>
                     </div>
                 </div>
-                
+
             </nav>
 
             <!-- Popup itself -->
             <div id="gallery" class="popup mfp-with-anim mfp-hide tm-bg-gray">
+                <a href="#" class="tm-close-popup">
+                    Return home
+                    <i class="fas fa-times"></i>
+                </a>
                 <h2>Customer Information</h2>
                 <div id="formularioCustomer">
+                    <label class="switch">
+                        <input type="checkbox" id="myCheck" checked onchange="chekIfCompanyOrCustomer()">
+                        <span class="slider round"></span>
+                    </label>
+                    <label id="companyLable">Company</label>
+                    <label id="customerLable">Customer</label>   
                     <div class="formSubgroup" id="customerName">
                         <label>Company: </label>
                         <input type="text"  id="customerNameText" name="input" placeholder="Name" oninput="validateLength('customerName')"  >
@@ -143,6 +153,10 @@
 
                 </div>
                 <div id="Instructions" class="popup mfp-with-anim mfp-hide tm-bg-gray">
+                    <a href="#" class="tm-close-popup">
+                        Return home
+                        <i class="fas fa-times"></i>
+                    </a>
                     <div>
                         <h1 id="instructionTitle">How to use this web app</h1>
                         <p>
@@ -161,7 +175,7 @@
             </div>
 
             <div id="receiver" class="popup mfp-with-anim mfp-hide tm-bg-gray">
-                
+
             </div>
 
             <div id="about" class="popup mfp-with-anim mfp-hide tm-bg-gray">
@@ -174,7 +188,7 @@
         </div>
 
         <footer class="tm-footer">
-            <span>Copyright &copy;  2020 version 1.2.0-beta</span>
+            <span>Copyright &copy;  2020 version 1.2.1-beta</span>
             <span>Web Developed by Isaac Herrera</span>
         </footer>
 
