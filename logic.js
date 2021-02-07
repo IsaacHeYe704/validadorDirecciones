@@ -10,7 +10,7 @@ window.onload = function () {
     xhttp2.send();
     xhttp.open("GET", "./file/colombianCities.json", true);
     xhttp.send();
-    removeDouble("calle 134a ##57a 55");
+   
 };
 function initMap()
 {
@@ -142,7 +142,7 @@ function getvalues()
 function isCorrect()
 {
 
-    if (document.getElementById("direccionLable").textContent.toLowerCase().replace(/ /g, "") == (removeDouble(responceAddress).toLowerCase().replace(/ /g, "")) && document.getElementById("direccionLable").textContent.toLowerCase()!="")
+    if (removeDots(document.getElementById("direccionLable").textContent.toLowerCase().replace(/ /g, "")) == removeDots((removeDouble(responceAddress).toLowerCase().replace(/ /g, ""))) && document.getElementById("direccionLable").textContent.toLowerCase()!="")
     {
         document.getElementById("direccionResponseLable").classList.remove('error');
         document.getElementById("direccionLable").classList.add('validated');
@@ -186,16 +186,31 @@ function removeDouble(text)
     }
     return result;
 }
+function removeDots(text)
+{
+    var aux=text.split(".");
+    var result ;
+    if(aux.length > 1)
+    {
+        result = aux[0]  + aux[1];
+        
+    }else
+    {
+        result = text;
+    }
+    return result;
+}
 
 function copy()
 {
     var NameTextLable = document.getElementById("customerNameTextLable").textContent;
     var pocTextLable = document.getElementById("pocTextLable").textContent;
+    var emailTextLable = document.getElementById("eMailTextLable").textContent;
     var enteredDireccionLable = document.getElementById('enteredDireccionLable').textContent;
     var complementLable = document.getElementById("complementLable").textContent;
     var cityLable = document.getElementById("cityLable").textContent;
     var phoneTextLable = document.getElementById("phoneTextLable").textContent;
-    var dummyContent = NameTextLable + " \n"+pocTextLable+ " \n"+enteredDireccionLable+ " \n"+complementLable+ " \n "+cityLable+ " \n"+ phoneTextLable;
+    var dummyContent = NameTextLable + " \n"+pocTextLable+ " \n" +emailTextLable+ " \n"+enteredDireccionLable+ " \n"+complementLable+ " \n "+cityLable+ " \n"+ phoneTextLable;
     if ( pocTextLable == "" || enteredDireccionLable == "" || complementLable ==""||cityLable=="" || phoneTextLable == "")
     {
         alert("message copied but you havent entered all info, please check it");

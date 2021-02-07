@@ -66,7 +66,7 @@ h2
    margin-top:-30px;
 }
 #myButton {
-	background-color:#5e8deb;
+	background-color:#309afd;
 	border-radius:24px;
 	border:3px solid #4e6096;
 	display:inline-block;
@@ -79,7 +79,7 @@ h2
 	text-shadow:-1px 4px 13px #283966;
 }
 #myButton:hover {
-	background-color:#2a5487;
+	background-color:  #5e8deb;
 }
 #myButton:active {
 	position:relative;
@@ -175,4 +175,18 @@ input:checked + .slider:before {
 #companyLable
 {
     display: inline-block;
+}
+ol li
+{
+    font-size:1.6em;
+    margin-bottom: 20px;
+}
+.primaryColorOrange
+{
+    color: rgb(242, 175, 0);
+}
+.primaryColorBlue
+{
+    color: #309afd;
+    
 }

@@ -22,7 +22,7 @@
     </head>
     <body>
         <header class="tm-site-header">
-            <h1 class="tm-mt-0 tm-mb-15"><span class="tm-color-primary">Address</span> <span class="tm-color-gray-2">validation</span></h1>
+            <h1 class="tm-mt-0 tm-mb-15"><span class="primaryColorBlue">My</span><span class="primaryColorOrange">Address</span><span class="primaryColorBlue">Validator</span></h1>
         </header>
 
 
@@ -30,10 +30,10 @@
             <nav class="tm-main-nav">
                 <ul id="inline-popups">
                     <!-- gallery -->
-                    <li class="tm-nav-item">
+                    <li class="tm-nav-item primaryColorBlue">
                         <a href="#Instructions" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
                             Instructions
-                            <i class="fas fa-3x fa-book"></i>
+                            <i class="fas fa-3x fa-book" id="prueba"></i>
                         </a>
                     </li>
                     <li class="tm-nav-item">
@@ -50,6 +50,9 @@
                     </div>
                     <div class="formatSubgroup  " id="pocLable">
                         <h2 class="formItem"><small id="pocTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas  fa-xs fa-exclamation-circle" ></i></h2>
+                    </div>
+                    <div class="formatSubgroup  " id="eMailLable">
+                        <h2 class="formItem"><small id="eMailTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas  fa-xs fa-exclamation-circle" ></i></h2>
                     </div>
                     <div class="formatSubgroup " id="enteredDireccionLableDiv">
                         <h2 class="formItem"> <small id="enteredDireccionLable"></small> <i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
@@ -102,6 +105,13 @@
                         <i class="fas fa-check-circle" ></i>
                         <i class="fas fa-exclamation-circle" ></i>
                         <small><b>Este campo debe ser de menos de 30 caracteres</b></small>
+                    </div>
+                    <div class="formSubgroup" id="eMail">
+                        <label>E-mail: </label>
+                        <input type="text"  id="eMailText" name="input" placeholder="Name" oninput="validateIsEmail('eMail')"  >
+                        <i class="fas fa-check-circle" ></i>
+                        <i class="fas fa-exclamation-circle" ></i>
+                        <small><b>Este campo debe ser un email de menos de 30 caracteres</b></small>
                     </div>
                     <div class="formSubgroup" id="phone">
                         <label>Contact phone:</label>
@@ -159,14 +169,15 @@
                     </a>
                     <div>
                         <h1 id="instructionTitle">How to use this web app</h1>
-                        <p>
-                            1) Open the formulary section .  <i class="fas fa-1x fa-pen-square "></i> <br><br>
-                            2) Fill the customer information that is ask, and scroll down. <br><br>
-                            3) Fill the address information them click on validate, now you will see the address that you described in <b> entered address</b> and in <b>certified address</b> an address that exists and is the closest we can find , if you see this fields writen in green it means you address is certified to be correct, if not please check.<br><br>
-                            4) Close the formulary section by clicking on the edges of the window.<br><br>
-                            5) Now you will see all the information you entered formed below the ship to title, all text must be green, red means there is a error.<br><br>
-                            6) by clicking on copy information you will be able to copy all data in order to your clipboard.
-                        </p>
+                        <ol>
+                            <li>Open the address form. <i class="fas fa-1x fa-pen-square "></i></li>
+                            <li>Fill the customer information that is asked and scroll down.</li>
+                            <li>Fill the address information then click on validate. Now you will see a quick comparison between the address you entered and the one the systems verifies. If you see this fields written in green it means you address is verified and correct, if not, please double check the information.</li>
+                            <li>Close the address form by clicking “Return Home” on the top right corner.</li>
+                            <li>Now you will see all the information you entered/verified below “Ship to:”. Note that all parts of the address must have a green check mark on the right side, a red exclamation mark means there is still an error.</li>
+                            <li>If you want to copy the organized information, you can do so by clicking the “Copy information” button.</li>
+
+                        </ol>
                     </div>
                 </div>
                 <script defer
@@ -188,7 +199,7 @@
         </div>
 
         <footer class="tm-footer">
-            <span>Copyright &copy;  2020 version 1.2.2-beta</span>
+            <span>Copyright &copy;  2020 version 1.2.3-beta</span>
             <span>Web Developed by Ruach Technologies</span>
         </footer>
 

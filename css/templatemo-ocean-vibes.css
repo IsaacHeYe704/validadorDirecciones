@@ -108,7 +108,8 @@ a {
 
 .tm-nav-item {
     list-style: none;
-    margin: 22px;   
+    margin: 22px;  
+    
 }
 
 .tm-nav-link {
@@ -126,6 +127,7 @@ a {
 .tm-nav-link:hover,
 .tm-nav-link.active {
     color: #309AFD;
+    
 }
 
 .tm-nav-link i {
