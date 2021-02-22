@@ -81,7 +81,7 @@ function validarExistencia()
         }
     };
 
-    xhttp3.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccionBuscada + "+" + ciudad + "&key=AIzaSyDSdKGz-2F7UpjeduTxOFAghBpfOAKq4qM", true);
+    xhttp3.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccionBuscada + "+" + ciudad + "&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg", true);
     //alert("https://maps.googleapis.com/maps/api/geocode/json?address="+direccionBuscada+"+"+ciudad+"&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg");
     
     xhttp3.send();
