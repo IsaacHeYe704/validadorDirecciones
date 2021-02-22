@@ -77,7 +77,7 @@ function validarExistencia()
         if (this.readyState === 4 && this.status === 200)
         {
             sacarDireccionGoogle(this.responseText);
-            alert(this.responseText);
+            alert("https://maps.googleapis.com/maps/api/geocode/json?address=" + direccionBuscada + "+" + ciudad + "&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg");
         }
     };
 
