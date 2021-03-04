@@ -5,8 +5,9 @@ var placeSearch, autocomplete, autocomplete_textarea;
 var lat=0;
 var lng=0;
 var componentForm = {
-  street_number: 'short_name',
   route: 'long_name',
+  street_number: 'short_name',
+  
   locality: 'long_name',
   administrative_area_level_1: 'short_name',
   country: 'long_name',
