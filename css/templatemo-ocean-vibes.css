@@ -185,10 +185,12 @@ a {
 /* text-based popup styling */
 .popup {
     position: relative;
+    
     padding: 12px 10px 35px;
     width:auto;
     max-width: 1200px;
     margin: 0 auto; 
+
 }
 
 /* 
@@ -234,6 +236,7 @@ button.mfp-arrow {
 .tm-gallery {
     flex: 0 0 68%;
     margin: 0 20px;
+   
 }
 
 .tm-gallery-container {

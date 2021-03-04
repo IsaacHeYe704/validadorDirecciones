@@ -1,6 +1,6 @@
 #formularioCustomer
 {
-    width: 40%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
 
@@ -11,10 +11,21 @@
     position: relative;
 }
 
-.formSubgroup lable
+.formSubgroup div
 {
-    display: inline-block;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  
+}
+.directionSubgroup div
+{
+    display: flex;
+  align-items: center;
+}
+.customerLables
+{
+  margin-right: 20px;
+  width: 30%;
 }
 
 .formSubgroup input
@@ -22,11 +33,14 @@
     display: block;
     width: 100%;
     padding: 10px;
-    font-size: 14 px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .formSubgroup.success input
 {
     border-color: #2ecc71;
+    
 }
 .formSubgroup.errorCustomer input
 {
@@ -36,7 +50,7 @@
 .formSubgroup i {
 	visibility: hidden;
 	position: absolute;
-	top: 40px;
+	top: 20px;
 	right: 10px;
 }
 .formSubgroup.success i.fa-check-circle
@@ -51,12 +65,15 @@
 }
 .formSubgroup small
 {
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
+    margin-left: 25%;
+    
 }
 .formSubgroup.errorCustomer small
 {
     color: #e74c3c;
-    visibility: visible;
+    display: block;
 }
 
 
@@ -99,4 +116,90 @@
 {
     color: #e74c3c;
    visibility: visible;
+}
+
+@media(min-width: 900px)
+{
+    .addressForm
+    {
+        
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .directionSubgroup  div
+    {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .directionSubgroup div input
+    {
+        width: 70%;
+        
+    }
+    .directionSubgroup div label
+    {
+        width: 40%;
+    }
+    .addressAutoCompleteContainer input
+    {
+        width: 70%;
+    }
+    .addressAutoCompleteContainer 
+    {
+        
+        margin-bottom: 20px;
+        display: flex;
+        
+    }
+    .addressAutoCompleteContainer label
+    {
+        width: 20%;
+        margin-right:5px ;
+    }
+    
+    label
+    {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 900px) 
+{
+    #formularioCustomer
+    {
+        width: 90%;
+    }
+    .formSubgroup div
+    {
+        flex-flow: column;
+        
+    }
+    .formSubgroup small
+    {
+        margin-left: 0;
+    }
+    .customerLables
+    {
+        width: 100%;
+       
+    }
+    .directionSubgroup  div
+    {
+        width: 90%;
+        padding: 0;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+
+
 }
