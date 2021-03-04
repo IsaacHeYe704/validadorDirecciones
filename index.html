@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="logic.js"></script>
@@ -18,9 +19,15 @@
         fa-check-square
         https://templatemo.com/tm-554-ocean-vibes
         -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200' rel='stylesheet' type='text/css'>
+		<link type="text/css" rel="stylesheet"  href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet"  href="css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet"  href="css/style.css">
+
+        
 
     </head>
-    <body>
+    <body onload="initialize()">
         <header class="tm-site-header">
             <h1 class="tm-mt-0 tm-mb-15"><span class="primaryColorBlue">My</span><span class="primaryColorOrange">Address</span><span class="primaryColorBlue">Validator</span></h1>
         </header>
@@ -123,42 +130,65 @@
 
                 </div>
                 <h2>Address validator: </h2>
-                <div id="formularioContainer">
-                    <select id="citySelector" onchange="directionLableUpdate()" class="formulario" ></select>
-                    <select id="tipoDeViaSelector" onchange="directionLableUpdate()" class="formulario">
-                        <option value="0">SELECCIONE TIPO DE VIA</option>
-                        <option>AVENIDA CARRERA</option>
-                        <option value="cl.">CALLE</option>
-                        <option value="cra.">CARRERA</option>
-                        <option>CARRETERA</option>
-                        <option>CIRCUMVALAR</option>
-                        <option>MANGA</option>
-                        <option>KILOMETRO</option>
-                        <option>MANZANA</option>
-                    </select>
-                    <input type="text" id="num1" name="input" placeholder="número" oninput="directionLableUpdate()" class="formulario">
-                    <select id="letra1" onchange="directionLableUpdate()" class="formulario"></select>
-
-                    <input type="text" id="num2" placeholder="número" oninput="directionLableUpdate()" class="formulario">
-                    <select id="letra2" onchange="directionLableUpdate()" class="formulario"></select>
-
-                    <input type="text" id="num3" placeholder="número" oninput="directionLableUpdate()" class="formulario">
-                    <select id="complemento1" onchange="directionLableUpdate()" class="formulario">
-                        <option value="NORTE">NORTE</option>
-                        <option value="SUR">SUR</option>
-                    </select>
-                    <input type="text" id="complementoGeneral" placeholder="complemento: conjunto, torre, apartamento" oninput="directionLableUpdate()" class="formulario">
-                    <button id="submitButton" onclick="validarExistencia()" class="formulario" >validate</button>
-                </div>
-
-                <div id="enteredAddress" >
-                    <h3>Entered address: </h3>
-                    <p id="direccionLable" class=""><p>
-                </div >
-                <div id="googlesAddress">
-                    <h3>Certified address: </h3>
-                    <p id="direccionResponseLable" class=""> </p>
-                </div>
+                
+                   
+                    <div class="container" style="margin-top: 5px;" >
+                        <div class="row">
+                            <div class="col-md-8">
+                                <form class="form-horizontal" autocomplete="off">
+                                          
+                                                
+                                      <div class="form-group">
+                                        <label class="col-sm-2 control-label">Dirección</label>
+                                        <div class="col-sm-10">
+                                              <input class="form-control" id="autocomplete" placeholder="Ingrese su dirección" onchange="directionLableUpdate()" onclick="directionLableUpdate()" onmousemove="directionLableUpdate()" onFocus="geolocate()" type="text"></input>
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="form-group">
+                                        <label for="street_number" class="col-sm-2 control-label">Calle</label>
+                                        <div class="col-sm-10">
+                                              <input class="form-control" id="street_number"></input>
+                                              <br/>
+                                              <input class="form-control" id="route"></input>
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="form-group">
+                                        <label for="locality" class="col-sm-2 control-label">Ciudad</label>
+                                        <div class="col-sm-10">
+                                              <input class="form-control" id="locality"></input>
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="form-group">
+                                        <label for="administrative_area_level_1" class="col-sm-2 control-label">Estado</label>
+                                        <div class="col-sm-10">
+                                              <input class="form-control" id="administrative_area_level_1"></input>
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="form-group">
+                                        <label for="country" class="col-sm-2 control-label">País</label>
+                                        <div class="col-sm-10">
+                                              <input class="form-control" id="country"></input>
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="form-group">
+                                        <label for="postal_code" class="col-sm-2 control-label">Código postal</label>
+                                        <div class="col-sm-10">
+                                              <input class="form-control" id="postal_code"></input>
+                                        </div>
+                                      </div>
+                                      
+                                </form>
+                            </div>
+                            <div class="col-md-4">
+                            
+                            </div>
+                        </div>
+                    </div>
                 <div id="map" >
 
                 </div>
@@ -180,9 +210,9 @@
                         </ol>
                     </div>
                 </div>
-                <script defer
+                <!-- <script defer
                         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg &callback=initMap">
-                </script>
+                </script> -->
             </div>
 
             <div id="receiver" class="popup mfp-with-anim mfp-hide tm-bg-gray">
@@ -199,14 +229,16 @@
         </div>
 
         <footer class="tm-footer">
-            <span>Copyright &copy;  2020 version 1.2.3-beta</span>
+            <span>Copyright &copy;  2021 version 2.0.0-beta</span>
             <span>Web Developed by Ruach Technologies</span>
         </footer>
-
+        <script src="js/jquery.min.js"></script>
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/imagesloaded.pkgd.min.js"></script>
         <script src="js/isotope.pkgd.min.js"></script>
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/templatemo-script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg&libraries=places"></script>
+        <script src="js/script.js"> </script>  
     </body>
 </html>

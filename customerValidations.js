@@ -76,7 +76,10 @@ function  validateIsEmail(id){
         }
         document.getElementById(id+"TextLable").innerHTML = texField.value;    
 }
-
+function directionLableUpdate()
+{
+    document.getElementById("enteredDireccionLable").innerHTML = document.getElementById("autocomplete").value;
+}
 
 
 

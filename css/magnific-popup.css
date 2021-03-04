@@ -46,7 +46,15 @@
     margin: 0 auto;
     text-align: left;
     z-index: 1045; }
-  
+
+.pac-container
+{
+  z-index: 1045; 
+}
+
+
+
+    
   .mfp-inline-holder .mfp-content,
   .mfp-ajax-holder .mfp-content {
     width: 100%;
