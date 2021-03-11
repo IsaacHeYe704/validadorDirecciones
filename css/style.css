@@ -141,3 +141,8 @@ body {
     border-color: #3a3f51;
     color: #fff !important;
 }
+ul li
+{
+    font-size: 0.8em;
+    margin-left: 50px;
+}
