@@ -42,7 +42,7 @@
                     </li>
                     <li class="tm-nav-item">
                         <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                            Form
+                            Template
                             <i class="fas fa-3x fa-pen-square "></i>
                         </a>
                     </li>
@@ -87,14 +87,14 @@
                     Return home
                     <i class="fas fa-times"></i>
                 </a>
-                <h2>Customer Information</h2>
+                <h2>Consumer Information</h2>
                 <div id="formularioCustomer">
                     <label class="switch">
                         <input type="checkbox" id="myCheck" checked onchange="chekIfCompanyOrCustomer()">
                         <span class="slider round"></span>
                     </label>
-                    <p id="companyLable">Enterprise</p>
-                    <p id="customerLable">Customer</p>
+                    <p id="companyLable">Commercial/Distribution</p>
+                    <p id="customerLable">Consumer</p>
                     <div class="formSubgroup" id="customerName">
                         <div >
                             <label class="customerLables">Company: </label>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="formSubgroup" id="poc">
                         <div>
-                            <label class="customerLables">Contact: (POC)</label>
+                            <label class="customerLables">Contact (POC):</label>
                             <input type="text" id="pocText" name="input" placeholder="Name" oninput="validateLength('poc')"  >
                         </div>
                         
@@ -118,7 +118,7 @@
                     <div class="formSubgroup" id="eMail">
                         <div>
                             <label class="customerLables">Email: </label>
-                            <input type="text"  id="eMailText" name="input" placeholder="Name" oninput="validateIsEmail('eMail')"  >
+                            <input type="text"  id="eMailText" name="input" placeholder="E-mail" oninput="validateIsEmail('eMail')"  >
                         </div>
                         
                         <i class="fas fa-check-circle" ></i>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="formSubgroup" id="phone">
                         <div>
-                            <label class="customerLables">Contact phone:</label>
+                            <label class="customerLables">Telephone number:</label>
                             <input type="text" id="phoneText" name="input" placeholder="Number" oninput="validateLength('phone')" >
                         </div>
                         
@@ -260,7 +260,7 @@
         </div>
 
         <footer class="tm-footer">
-            <span>Copyright &copy;  2021 version 2.0.0-beta</span>
+            <span>Copyright &copy;  2021 version 2.0.1-beta</span>
             <span>Web Developed by Ruach Technologies</span>
         </footer>
         <script src="js/jquery.min.js"></script>

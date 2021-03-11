@@ -16,7 +16,7 @@ function validateLength(id)
             document.getElementById(id+"TextLable").innerHTML = texField.value;
         }else if((texField.value.length != 7) && (texField.value.length != 10)) {
             caller.className = 'formSubgroup errorCustomer';
-            document.getElementById('phoneError').innerHTML = "Este campo debe ser de 7<small> (celular)</small> o 10 <small> (fijo)</small> caracteres";
+            document.getElementById('phoneError').innerHTML = "Este campo debe ser de 7(fijo) o 10(celular) caracteres";
             document.getElementById(id+"TextLable").innerHTML = texField.value;
             document.getElementById(id+"Lable").className = "formatSubgroup errorFormat";
         }else
@@ -53,8 +53,12 @@ function  validateIsEmail(id){
     var email = document.getElementById('eMail');
     var texField = document.getElementById(id + 'Text');
     var hasAt = texField.value.split("@");
-    var hasDot = texField.value.split(".");
     
+    var hasDot =0;
+    
+    if(hasAt.length !=1)
+        hasDot = hasAt[1].split(".");
+        
     if (texField.value.length == 0)
         {
             caller.className = 'formSubgroup';
@@ -71,8 +75,7 @@ function  validateIsEmail(id){
             {
                 caller.className = 'formSubgroup errorCustomer';
                 document.getElementById(id+"Lable").className = "formatSubgroup errorFormat";
-            }
-            
+            }  
         }
         document.getElementById(id+"TextLable").innerHTML = texField.value;    
 }
