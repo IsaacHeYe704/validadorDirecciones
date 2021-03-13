@@ -27,7 +27,9 @@ function initMap()
     });
     
 }
+
 function initialize() {
+ 
   // Cree el objeto de autocompletado, restringiendo la búsqueda
   autocomplete = new google.maps.places.Autocomplete(
      (document.getElementById('autocomplete')),
@@ -44,7 +46,7 @@ function initialize() {
     fillInAddress_textarea();
   });
 }
-
+                             
 function fillInAddress_textarea(){
 
 	var place = autocomplete_textarea.getPlace();

@@ -75,7 +75,10 @@
     color: #e74c3c;
     display: block;
 }
-
+.iti
+{
+    margin-top: 10px;
+}
 
 
 .formatSubgroup
@@ -117,6 +120,7 @@
     color: #e74c3c;
    visibility: visible;
 }
+
 
 @media(min-width: 900px)
 {
@@ -199,7 +203,4 @@
         margin-left: auto;
         margin-right: auto;
     }
-  
-
-
 }

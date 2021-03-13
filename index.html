@@ -13,14 +13,14 @@
         <link rel="stylesheet" href="css/validator.css">
         <link rel="stylesheet" href="css/aprovedandundaproved.css">
         <script type="text/javascript" src="customerValidations.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!--
 
-        TemplateMo 554 Ocean Vibes
-        fa-check-square
-        https://templatemo.com/tm-554-ocean-vibes
+        scripts and styles for international tel
         -->
-        
-
+        <link rel="stylesheet" href="css/intlTelInput.min.css">
+        <script src="js/intlTelInput.js"></script>
         
 
     </head>
@@ -128,9 +128,8 @@
                     <div class="formSubgroup" id="phone">
                         <div>
                             <label class="customerLables">Telephone number:</label>
-                            <input type="text" id="phoneText" name="input" placeholder="Number" oninput="validateLength('phone')" >
+                            <input type="tel" name="phone" initialCountry='col'id="phoneText" name="input" placeholder="Number" oninput="validateLength('phone')" >
                         </div>
-                        
                         <i class="fas fa-check-circle" ></i>
                         <i class="fas fa-exclamation-circle" ></i>
                         <small id="phoneError"><b>Este campo debe ser de menos de 30 caracteres</b></small>
@@ -192,7 +191,7 @@
                                               </div>
                                               
                                               <div class="form-group">
-                                                <label for="postal_code" class="col-sm-2 control-label">Postal Code</label>
+                                                <label for="postal_code" class="col-sm-2 control-label">Zip Code</label>
                                                 <div class="col-sm-10">
                                                       <input class="form-control" id="postal_code"></input>
                                                 </div>
@@ -201,7 +200,8 @@
                                       </div> 
                                       <div class="addressAutoCompleteContainer" id="complement">
                                         <label class="col-sm-2 control-label">Reference</label>
-                                        <input class="form-control" id="complementText" placeholder="" onchange="validateLength('complement')"   onFocus="geolocate()" type="text"></input>
+                                        <input class="form-control" id="complementText" placeholder="Please enter additional information If needed to deliver your order . Ex. Office #, Warehouse #, Deliver with Appointment, etc.
+                                        " onchange="validateLength('complement')"   onFocus="geolocate()" type="text"></input>
                                     </div>   
                                 </form>
                             </div>
@@ -233,10 +233,10 @@
                                 
                        
                             </li>
-                            <li>Put the address you want to validate in front of â€œSearch your address:â€.<br>The app will automatically verify the data and will show all the details, including the exact location in Google Maps.</li>
-                            <li>Now you will see all the information you entered/verified below â€œShip to:â€.<br>
+                            <li>Put the address you want to validate in front of â€œSearch your address:<br>The app will automatically verify the data and will show all the details, including the exact location in Google Maps.</li>
+                            <li>Now you will see all the information you entered/verified below Ship to:<br>
                                 Note that all components of the information must have a green check mark on the right side, a red exclamation mark means there is still an error.</li>
-                            <li>If you want to copy the organized information in your clipboard, you can do so by clicking the â€œCopy informationâ€ button.</li>
+                            <li>If you want to copy the organized information in your clipboard, you can do so by clicking the Copy information button.</li>
                         </ol>
 
                     </div>
@@ -271,5 +271,25 @@
         <script src="js/templatemo-script.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg&libraries=places"></script>
         <script src="js/script.js"> </script>  
+        
+        
+        <script>    
+            var input = document.querySelector("#phoneText");
+           
+            window.intlTelInput(input, {
+                autoHideDialCode:false,
+                nationalMode: false,
+                preferredCountries:['co'],
+                initialCountry: "auto",
+                geoIpLookup: function(callback) {
+                    $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                    var countryCode = (resp && resp.country) ? resp.country : "us";
+                    callback(countryCode);
+                    });
+                },
+                utilsScript: "./js/utils.js?1613236686837" // just for formatting/placeholders etc
+                });
+               
+        </script>
     </body>
 </html>
