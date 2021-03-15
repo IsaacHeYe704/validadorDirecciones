@@ -10,12 +10,12 @@ function copy()
     var NameTextLable = document.getElementById("customerNameTextLable").textContent;
     var pocTextLable = document.getElementById("pocTextLable").textContent;
     var emailTextLable = document.getElementById("eMailTextLable").textContent;
-    var enteredDireccionLable = document.getElementById('enteredDireccionLable').textContent;
-    var complementLable = document.getElementById("complementLable").textContent;
-    var cityLable = document.getElementById("cityLable").textContent;
+    var enteredDireccionLable = document.getElementById('enteredDireccionLable').textContent.split(",")[0];
+    var cityEntered = document.getElementById('autocomplete').value.split(",")[1];
+    var complementLable = document.getElementById("complementText").value;
     var phoneTextLable = document.getElementById("phoneTextLable").textContent;
-    var dummyContent = NameTextLable + " \n"+pocTextLable+ " \n" +emailTextLable+ " \n"+enteredDireccionLable+ " \n"+complementLable+ " \n "+cityLable+ " \n"+ phoneTextLable;
-    if ( pocTextLable == "" || enteredDireccionLable == "" || complementLable ==""||cityLable=="" || phoneTextLable == "")
+    var dummyContent = NameTextLable + "\n"+pocTextLable+ "\n"+ enteredDireccionLable+ "\n" + cityEntered+ "\n"+phoneTextLable+"\n"+complementLable+"\n"+ emailTextLable ;
+    if ( pocTextLable == "" || enteredDireccionLable == ""  || phoneTextLable == "")
     {
         alert("message copied but you havent entered all info, please check it");
     }

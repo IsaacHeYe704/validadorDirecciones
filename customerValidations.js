@@ -83,7 +83,9 @@ function  validateIsEmail(id){
 }
 function directionLableUpdate()
 {
-    document.getElementById("enteredDireccionLable").innerHTML = document.getElementById("autocomplete").value;
+    document.getElementById("enteredDireccionLable").innerHTML = document.getElementById("autocomplete").value.split(",")[0];
+    document.getElementById("cityLable").innerHTML = document.getElementById('autocomplete').value.split(",")[1];
+    
 }
 
 
