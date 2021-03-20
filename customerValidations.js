@@ -13,12 +13,12 @@ function validateLength(id)
             caller.className = 'formSubgroup';
         }else if (isNaN(texField.value)) {
             caller.className = 'formSubgroup errorCustomer';
-            document.getElementById('phoneError').innerHTML = "Este campo debe ser un número";
+            document.getElementById('phoneError').innerHTML = "This fild must be numeric";
             document.getElementById(id+"Lable").className = "formatSubgroup errorFormat";
             document.getElementById(id+"TextLable").innerHTML = texField.value.split('+')[1];
         }else if((texField.value.length != 10) && (texField.value.length != 13)) {
             caller.className = 'formSubgroup errorCustomer';
-            document.getElementById('phoneError').innerHTML = "Este campo debe ser de 7(fijo) o 10(celular) caracteres";
+            document.getElementById('phoneError').innerHTML = "this field must be 7  or 10  digits";
             document.getElementById(id+"TextLable").innerHTML = texField.value.split('+')[1];
             document.getElementById(id+"Lable").className = "formatSubgroup errorFormat";
         }else
@@ -85,7 +85,7 @@ function directionLableUpdate()
 {
     document.getElementById("enteredDireccionLable").innerHTML = document.getElementById("autocomplete").value.split(",")[0];
     document.getElementById("cityLable").innerHTML = document.getElementById('autocomplete').value.split(",")[1];
-    
+
 }
 
 
