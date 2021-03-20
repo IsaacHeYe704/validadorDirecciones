@@ -200,15 +200,18 @@ ol ul li
   font-size: 0.7em;
   margin-left: 50px;
 }
+#phonePrefix
+{
+  width: 100px;
+  
+}      
 
-
-
-
-
-
-
-
-
+#phoneContainer
+{
+  display: flex;
+  align-items: flex-start;
+  
+}
 
 
 

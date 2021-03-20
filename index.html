@@ -127,9 +127,10 @@
                         <small><b>This field must be a 30 characters or less Email</b></small>
                     </div>
                     <div class="formSubgroup" id="phone">
-                        <div>
+                        <div id="phoneContainer">
                             <label class="customerLables">Telephone number:</label>
-                            <input type="tel" name="phone" initialCountry='col'id="phoneText" name="input" placeholder="Number" oninput="validateLength('phone')" >
+                            <input type="tel" name="phone" initialCountry='co' id="phonePrefix" oninput="validateLength('phone')" onblur="validateLength('phone')">
+                            <input type="tel"  id="phoneText" name="input" placeholder="Number" oninput="validateLength('phone')">
                         </div>
                         <i class="fas fa-check-circle" ></i>
                         <i class="fas fa-exclamation-circle" ></i>
@@ -275,13 +276,13 @@
         
         
         <script>    
-            var input = document.querySelector("#phoneText");
+            var input = document.querySelector("#phonePrefix");
            
             window.intlTelInput(input, {
                 autoHideDialCode:false,
                 nationalMode: false,
-                preferredCountries:['co'],
-                initialCountry: "auto",
+                preferredCountries:['co','ar','cl','mx','pe','us'],
+                initialCountry: "co",
                 geoIpLookup: function(callback) {
                     $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
                     var countryCode = (resp && resp.country) ? resp.country : "us";

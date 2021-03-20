@@ -7,7 +7,7 @@ function validateLength(id)
 
     if (id == 'phone')
     {
-        
+        var prefix = document.querySelector("#phonePrefix");
         if (texField.value.length ==0)
         {
             caller.className = 'formSubgroup';
@@ -15,11 +15,10 @@ function validateLength(id)
             caller.className = 'formSubgroup errorCustomer';
             document.getElementById('phoneError').innerHTML = "This fild must be numeric";
             document.getElementById(id+"Lable").className = "formatSubgroup errorFormat";
-            document.getElementById(id+"TextLable").innerHTML = texField.value.split('+')[1];
-        }else if((texField.value.length != 10) && (texField.value.length != 13)) {
+        }else if((texField.value.length != 10) && (texField.value.length !=7)) {
             caller.className = 'formSubgroup errorCustomer';
             document.getElementById('phoneError').innerHTML = "this field must be 7  or 10  digits";
-            document.getElementById(id+"TextLable").innerHTML = texField.value.split('+')[1];
+            
             document.getElementById(id+"Lable").className = "formatSubgroup errorFormat";
         }else
         {
@@ -29,10 +28,10 @@ function validateLength(id)
         //        document.getElementById(id+"TextLable").innerHTML = "571"+texField.value;
         //    }else
         //    {
-               document.getElementById(id+"TextLable").innerHTML = texField.value.split('+')[1];
         //    }
             document.getElementById(id+"Lable").className = "formatSubgroup success";
         }
+        document.getElementById(id+"TextLable").innerHTML = prefix.value.split('+')[1] +" "+texField.value;
     } else
     {
         if (texField.value.length == 0)
