@@ -27,7 +27,35 @@ function initMap()
     });
     
 }
-
+function changeValidationStatus()
+{
+  
+  var directionDiv = document.getElementById("enteredDireccionLableDiv");
+  var cityDiv = document.getElementById("cityLableDiv");
+  var postalDiv = document.getElementById("postal_codeLable");
+  var formInput = document.getElementById("formSubgroup");
+  directionDiv.className = "formatSubgroup success";
+  cityDiv.className = "formatSubgroup success";
+  formInput.className ="formSubgroup success";
+  zipError();
+}
+function changeValidationStatusError()
+{
+  var directionDiv = document.getElementById("enteredDireccionLableDiv");
+  var cityDiv = document.getElementById("cityLableDiv");
+  
+  var formInput = document.getElementById("formSubgroup");
+  directionDiv.className = "formatSubgroup errorFormat";
+  cityDiv.className = "formatSubgroup errorFormat";
+  formInput.className ="formSubgroup errorCustomer";
+  zipError();
+}
+function zipError()
+{
+  var zipLable = document.getElementById("postal_codeTextLable").innerHTML;
+  var postalDiv = document.getElementById("postal_codeLable");
+  (zipLable === "") ? postalDiv.className = "formatSubgroup errorFormat":postalDiv.className = "formatSubgroup success";
+}
 function initialize() {
  
   // Cree el objeto de autocompletado, restringiendo la búsqueda
@@ -38,6 +66,7 @@ function initialize() {
   // rellena los campos de dirección en el formulario.
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     fillInAddress();
+    changeValidationStatus();
   });
   autocomplete_textarea = new google.maps.places.Autocomplete((document.getElementById('autocomplete_textarea')),
       { types: ['geocode'] }

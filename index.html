@@ -143,11 +143,15 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <form class="addressForm" autocomplete="off">    
-
-                                    <div class="addressAutoCompleteContainer">
-                                        <label class="col-sm-2 control-label">Search your address</label>
-                                        <input class="form-control" id="autocomplete" placeholder="Enter your address" onchange="directionLableUpdate()" onclick="directionLableUpdate()" onblur="directionLableUpdate()" onfocusout='directionLableUpdate()' onmousemove="directionLableUpdate()" onFocus="geolocate()" type="text"></input>
-                                    </div> 
+                                    <div class="formSubgroup" id="formSubgroup" >
+                                        <div class="addressAutoCompleteContainer ">
+                                            <label class="col-sm-2 control-label">Search your address</label>
+                                            <input class="form-control" id="autocomplete" placeholder="Enter your address" onchange="directionLableUpdate()" oninput="changeValidationStatusError()" onclick="directionLableUpdate()" onblur="directionLableUpdate()" onfocusout='directionLableUpdate()' onmousemove="directionLableUpdate()" onFocus="geolocate()" type="text"></input>
+                                        </div>
+                                        <i class="fas fa-check-circle" ></i>
+                                        <i class="fas fa-exclamation-circle" ></i> 
+                                    </div>
+                                    
                                       <div class="directionSubgroup">
                                           <div class="directionItems">
                                             
