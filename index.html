@@ -50,33 +50,36 @@
                 <div  id="format">
                     <h2 class="formItem">Ship to: </h2>
                     <div class="formatSubgroup " id="customerNameLable">
-                        <h2 class="formItem"><small id="customerNameTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="customerNameTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('customerNameText')"></i><i class="fas fa-xs fa-exclamation-circle copyButton" onclick="copyLable('customerNameText')"></i></h2>
                     </div>
                     <div class="formatSubgroup  " id="pocLable">
-                        <h2 class="formItem"><small id="pocTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas  fa-xs fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="pocTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('pocText')"></i><i class="fas  fa-xs fa-exclamation-circle copyButton" onclick="copyLable('pocText')"></i></h2>
                     </div>
                     <div class="formatSubgroup " id="enteredDireccionLableDiv">
-                        <h2 class="formItem"> <small id="enteredDireccionLable"></small> <i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"> <small id="enteredDireccionLable"></small> <i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('enteredDireccion')"></i><i class="fas fa-xs fa-exclamation-circle copyButton" onclick="copyLable('enteredDireccion')"></i></h2>
                     </div>
                     <div class="formatSubgroup" id="cityLableDiv">
-                        <h2 class="formItem"><small id="cityLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="cityLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('city')"></i><i class="fas fa-xs fa-exclamation-circle copyButton" onclick="copyLable('city')"></i></h2>
                     </div>
                     <div class="formatSubgroup" id="phoneLable">
-                        <h2 class="formItem"><small id="phoneTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="phoneTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('phoneText')"></i><i class="fas fa-xs fa-exclamation-circle copyButton" onclick="copyLable('phoneText')"></i></h2>
                     </div>
                     <div class="formatSubgroup " id="complementLable">
-                        <h2 class="formItem"><small  id="complementTextLable"></small> <i class="fas fa-xs fa-check-circle" ></i><i class="fas fa-xs fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small  id="complementTextLable"></small> <i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('complementText')"></i><i class="fas fa-xs fa-exclamation-circle copyButton"  onclick="copyLable('complementText')"></i></h2>
                     </div>
                     <div class="formatSubgroup  " id="eMailLable">
-                        <h2 class="formItem"><small id="eMailTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas  fa-xs fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="eMailTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('eMailText')"></i><i class="fas  fa-xs fa-exclamation-circle copyButton" onclick="copyLable('eMailText')"></i></h2>
                     </div>
                     <div class="formatSubgroup  " id="postal_codeLable">
-                        <h2 class="formItem"><small id="postal_codeTextLable"></small><i class="fas fa-xs fa-check-circle" ></i><i class="fas  fa-xs fa-exclamation-circle" ></i></h2>
+                        <h2 class="formItem"><small id="postal_codeTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('postal_codeText')"></i><i class="fas  fa-xs fa-exclamation-circle copyButton" onclick="copyLable('postal_codeText')"></i></h2>
                     </div>
                 </div>
                 <div class="w-33">
                     <div class="center">
-                        <button  id="myButton"  onclick="copy()">Copy information </button>
+                        <a  class="myButton"  onclick="copy()">Copy information </a>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <a  class="myButton" id="senEmailButton"onclick="sendEmail()"  >Send Email</a>
+                        
                     </div>
                 </div>
 
@@ -236,10 +239,8 @@
                                     <li>Telephone number:</li>
                                     If you see a green check mark (<i class="fas fa-check-circle" style=" color: #22ff1f;"></i> ) it means the information has been verified, if not, you will receive a warning message (  <i class="fas fa-exclamation-circle" style="color: #fa0a26;"></i>), so please double check the information.
                                 </ul>
-                                
-                       
                             </li>
-                            <li>Put the address you want to validate in front of â€œSearch your address:<br>The app will automatically verify the data and will show all the details, including the exact location in Google Maps.</li>
+                            <li>Put the address you want to validate in front of Search your address:<br>The app will automatically verify the data and will show all the details, including the exact location in Google Maps.</li>
                             <li>Now you will see all the information you entered/verified below Ship to:<br>
                                 Note that all components of the information must have a green check mark on the right side, a red exclamation mark means there is still an error.</li>
                             <li>If you want to copy the organized information in your clipboard, you can do so by clicking the Copy information button.</li>

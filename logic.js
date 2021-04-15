@@ -7,14 +7,10 @@ var responceAddress="";
 
 function copy()
 {
-    var NameTextLable = document.getElementById("customerNameTextLable").textContent;
+    var dummyContent =getInfo();
     var pocTextLable = document.getElementById("pocTextLable").textContent;
-    var emailTextLable = document.getElementById("eMailTextLable").textContent;
     var enteredDireccionLable = document.getElementById('enteredDireccionLable').textContent.split(",")[0];
-    var cityEntered = document.getElementById('autocomplete').value.split(",")[1];
-    var complementLable = document.getElementById("complementText").value;
     var phoneTextLable = document.getElementById("phoneTextLable").textContent;
-    var dummyContent = NameTextLable + "\n"+pocTextLable+ "\n"+ enteredDireccionLable+ "\n" + cityEntered+ "\n"+phoneTextLable+"\n"+complementLable+"\n"+ emailTextLable ;
     if ( pocTextLable == "" || enteredDireccionLable == ""  || phoneTextLable == "")
     {
         alert("message copied but you havent entered all info, please check it");
@@ -22,6 +18,20 @@ function copy()
     var dummy = $('<textarea>').val(dummyContent).appendTo('body').select();
     document.execCommand('copy');
     $(dummy).remove();
+}
+function getInfo()
+{
+  var NameTextLable = document.getElementById("customerNameTextLable").textContent;
+  var pocTextLable = document.getElementById("pocTextLable").textContent;
+  var emailTextLable = document.getElementById("eMailTextLable").textContent;
+  var enteredDireccionLable = document.getElementById('enteredDireccionLable').textContent.split(",")[0];
+  var cityEntered = document.getElementById('autocomplete').value.split(",")[1]!== undefined ?document.getElementById('autocomplete').value.split(",")[1]:" " ;
+  
+  var complementLable = document.getElementById("complementText").value;
+  var phoneTextLable = document.getElementById("phoneTextLable").textContent;
+  var zipCodeTextLable = document.getElementById("postal_codeTextLable").textContent;
+  var dummyContent = NameTextLable + "\n"+pocTextLable+ "\n"+ enteredDireccionLable+ "\n" + cityEntered+ "\n"+phoneTextLable+"\n"+complementLable+"\n"+ emailTextLable+"\n"+zipCodeTextLable;
+  return(dummyContent);
 }
 function chekIfCompanyOrCustomer() {
   // Get the checkbox
@@ -45,7 +55,24 @@ function chekIfCompanyOrCustomer() {
     document.getElementById("customerNameTextLable").textContent = "";
   }
 }
+function copyLable(id)
+{
+  var callerValue = document.querySelector("#"+id+"Lable").innerHTML;
+  console.log(callerValue);
+  var dummy = $('<textarea>').val(callerValue).appendTo('body').select();
+  document.execCommand('copy');
+  $(dummy).remove();
+}
 
+function sendEmail()
+{
+  var body = getInfo();
+  var email = ''
+  var subject = '';
+  var emailBody =  body;
+  var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + encodeURIComponent(emailBody);
+  win = window.open(mailto_link, 'emailWin');
+}
 
 
 
