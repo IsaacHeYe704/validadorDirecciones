@@ -70,7 +70,7 @@ function sendEmail()
   var email = ''
   var subject = '';
   var emailBody =  body;
-  var mailto_link = "?body=" + encodeURIComponent(emailBody);
+  var mailto_link = 'mailto:' + email +"?body=" + encodeURIComponent(emailBody);
   win = window.open(mailto_link, 'emailWin');
 }
 
