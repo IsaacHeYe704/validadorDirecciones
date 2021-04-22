@@ -25,12 +25,11 @@ function getInfo()
   var pocTextLable = document.getElementById("pocTextLable").textContent;
   var emailTextLable = document.getElementById("eMailTextLable").textContent;
   var enteredDireccionLable = document.getElementById('enteredDireccionLable').textContent.split(",")[0];
-  var cityEntered = document.getElementById('autocomplete').value.split(",")[1]!== undefined ?document.getElementById('autocomplete').value.split(",")[1]:" " ;
-  
+  var cityEntered = document.getElementById('autocomplete').value.split(",")[1]!== undefined ?document.getElementById('autocomplete').value.split(",")[1].replace(/\s+/g, ''):" " ;
   var complementLable = document.getElementById("complementText").value;
   var phoneTextLable = document.getElementById("phoneTextLable").textContent;
   var zipCodeTextLable = document.getElementById("postal_codeTextLable").textContent;
-  var dummyContent = NameTextLable + "\n"+pocTextLable+ "\n"+ enteredDireccionLable+ "\n" + cityEntered+ "\n"+phoneTextLable+"\n"+complementLable+"\n"+ emailTextLable+"\n"+zipCodeTextLable;
+  var dummyContent = NameTextLable + "\n"+pocTextLable+ "\n"+ enteredDireccionLable+ "\n" + complementLable + "\n"+ cityEntered  +"\n"+phoneTextLable+"\n"+ emailTextLable+"\n"+zipCodeTextLable;
   return(dummyContent);
 }
 function chekIfCompanyOrCustomer() {
