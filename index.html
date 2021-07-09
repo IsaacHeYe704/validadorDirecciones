@@ -20,11 +20,10 @@
         scripts and styles for international tel
         -->
         <link rel="stylesheet" href="css/intlTelInput.min.css">
-        <script src="js/intlTelInput.js"></script>
-        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     </head>
-    <body onload="initialize()">
+    <body >
         <header class="tm-site-header">
             <h1 class="tm-mt-0 tm-mb-15"><span class="primaryColorBlue">My</span><span class="primaryColorOrange">Address</span><span class="primaryColorBlue">Validator</span></h1>
         </header>
@@ -34,269 +33,36 @@
             <nav class="tm-main-nav">
                 <ul id="inline-popups">
                     <!-- gallery -->
-                    <li class="tm-nav-item primaryColorBlue">
-                        <a href="#Instructions" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                            Instructions
-                            <i class="fas fa-3x fa-book" id="prueba"></i>
-                        </a>
+                    <li class="tm-nav-item primaryColorBlue" onclick="redirect('colombia')">
+                        <div data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
+                            <img src="./img/colombiaFlag.png"/>
+                            Colombia
+
+                        </div>
                     </li>
-                    <li class="tm-nav-item">
-                        <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
-                            Template
-                            <i class="fas fa-3x fa-pen-square "></i>
-                        </a>
+                    <li class="tm-nav-item" onclick="redirect('peru')">
+                        <div  data-effect="mfp-move-from-top" class="tm-nav-link" id="tm-gallery-link">
+                            <img src="./img/peruFlag.png"/>
+                            Perú
+                            
+                        </div>
                     </li>
                 </ul>
-                <div  id="format">
-                    <h2 class="formItem">Ship to: </h2>
-                    <div class="formatSubgroup " id="customerNameLable">
-                        <h2 class="formItem"><small id="customerNameTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('customerNameText')"></i><i class="fas fa-xs fa-exclamation-circle copyButton" onclick="copyLable('customerNameText')"></i></h2>
-                    </div>
-                    <div class="formatSubgroup  " id="pocLable">
-                        <h2 class="formItem"><small id="pocTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('pocText')"></i><i class="fas  fa-xs fa-exclamation-circle copyButton" onclick="copyLable('pocText')"></i></h2>
-                    </div>
-                    <div class="formatSubgroup " id="enteredDireccionLableDiv">
-                        <h2 class="formItem"> <small id="enteredDireccionLable"></small> <i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('enteredDireccion')"></i><i class="fas fa-xs fa-exclamation-circle copyButton" onclick="copyLable('enteredDireccion')"></i></h2>
-                    </div>
-                    <div class="formatSubgroup " id="complementLable">
-                        <h2 class="formItem"><small  id="complementTextLable"></small> <i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('complementText')"></i><i class="fas fa-xs fa-exclamation-circle copyButton"  onclick="copyLable('complementText')"></i></h2>
-                    </div>
-                    <div class="formatSubgroup" id="cityLableDiv">
-                        <h2 class="formItem"><small id="cityLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('city')"></i><i class="fas fa-xs fa-exclamation-circle copyButton" onclick="copyLable('city')"></i></h2>
-                    </div>
-                    <div class="formatSubgroup" id="phoneLable">
-                        <h2 class="formItem"><small id="phoneTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('phoneText')"></i><i class="fas fa-xs fa-exclamation-circle copyButton" onclick="copyLable('phoneText')"></i></h2>
-                    </div>
-                    <div class="formatSubgroup  " id="eMailLable">
-                        <h2 class="formItem"><small id="eMailTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('eMailText')"></i><i class="fas  fa-xs fa-exclamation-circle copyButton" onclick="copyLable('eMailText')"></i></h2>
-                    </div>
-                    <div class="formatSubgroup  " id="postal_codeLable">
-                        <h2 class="formItem"><small id="postal_codeTextLable"></small><i class="fas fa-xs fa-check-circle copyButton" onclick="copyLable('postal_codeText')"></i><i class="fas  fa-xs fa-exclamation-circle copyButton" onclick="copyLable('postal_codeText')"></i></h2>
-                    </div>
-                </div>
-                <div class="w-33">
-                    <div class="center">
-                        <button  class="myButton"  onclick="copy()">Copy information </button>
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                        <button  class="myButton" id="senEmailButton"onclick="sendEmail()"  >Send Email</button>
-                        
-                    </div>
-                </div>
+
 
             </nav>
 
             <!-- Popup itself -->
-            <div id="gallery" class="popup mfp-with-anim mfp-hide tm-bg-gray">
-                <a href="#" class="tm-close-popup">
-                    Return home
-                    <i class="fas fa-times"></i>
-                </a>
-                <h2>Consumer Information</h2>
-                <div id="formularioCustomer">
-                    <label class="switch">
-                        <input type="checkbox" id="myCheck" checked onchange="chekIfCompanyOrCustomer()">
-                        <span class="slider round"></span>
-                    </label>
-                    <p id="companyLable">Commercial/Distribution</p>
-                    <p id="customerLable">Consumer</p>
-                    <div class="formSubgroup" id="customerName">
-                        <div >
-                            <label class="customerLables">Company: </label>
-                            <input type="text" class="formLable" id="customerNameText" name="input" placeholder="Name" oninput="validateLength('customerName')"  >
-                        </div>
-                        
-                        <i class="fas fa-check-circle" ></i>
-                        <i class="fas fa-exclamation-circle" ></i>
-                        <small><b>This field must be less than 30 characters</b></small>
-                    </div>
-                    <div class="formSubgroup" id="poc">
-                        <div>
-                            <label class="customerLables">Contact (POC):</label>
-                            <input type="text" id="pocText" name="input" placeholder="Name" oninput="validateLength('poc')"  >
-                        </div>
-                        
-                        <i class="fas fa-check-circle" ></i>
-                        <i class="fas fa-exclamation-circle" ></i>
-                        <small><b>This field must be less than 30 characters</b></small>
-                    </div>
-                    <div class="formSubgroup" id="eMail">
-                        <div>
-                            <label class="customerLables">Email: </label>
-                            <input type="text"  id="eMailText" name="input" placeholder="E-mail" oninput="validateIsEmail('eMail')"  >
-                        </div>
-                        
-                        <i class="fas fa-check-circle" ></i>
-                        <i class="fas fa-exclamation-circle" ></i>
-                        <small><b>This field must be a 30 characters or less Email</b></small>
-                    </div>
-                    <div class="formSubgroup" id="phone">
-                        <div id="phoneContainer">
-                            <label class="customerLables">Telephone number:</label>
-                            <input type="tel" name="phone" initialCountry='co' id="phonePrefix" oninput="validateLength('phone')" onblur="validateLength('phone')">
-                            <input type="tel"  id="phoneText" name="input" placeholder="Number" oninput="validateLength('phone')">
-                        </div>
-                        <i class="fas fa-check-circle" ></i>
-                        <i class="fas fa-exclamation-circle" ></i>
-                        <small id="phoneError"><b>This field must be less than 30 characters</b></small>
-                    </div>
-
-                </div>
-                <h2 id="addressh2">Address validator: </h2>
-                    <div class="container" style="margin-top: 5px;" >
-                        <div class="row">
-                            <div class="col-md-8">
-                                <form class="addressForm" autocomplete="off">    
-                                    <div class="formSubgroup" id="formSubgroup" >
-                                        <div class="addressAutoCompleteContainer ">
-                                            <label class="col-sm-2 control-label">Search your address</label>
-                                            <input class="form-control" id="autocomplete" placeholder="Enter your address" onchange="directionLableUpdate()" oninput="changeValidationStatusError()" onclick="directionLableUpdate()" onblur="directionLableUpdate()" onfocusout='directionLableUpdate()' onmousemove="directionLableUpdate()" onFocus="geolocate()" type="text"></input>
-                                        </div>
-                                        <i class="fas fa-check-circle" ></i>
-                                        <i class="fas fa-exclamation-circle" ></i> 
-                                    </div>
-                                    
-                                      <div class="directionSubgroup">
-                                          <div class="directionItems">
-                                            
-                                            <div>
-                                                <label for="street_number" class="col-sm-2 control-label">Address</label>
-                                                <div>
-                                                   <input class="form-control" id="route"></input> 
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <label for="street_number" class="col-sm-2 control-label">Complement</label>
-                                                <div>
-                                                    <input class="form-control" id="street_number"></input>
-                                                </div>
-                                            </div>
-                                          </div>
-                                      </div>
-                                      <div class="directionSubgroup">
-                                        <div >
-                                            <div> 
-                                                <label for="locality" class="col-sm-2 control-label">City</label>
-                                                <div class="col-sm-10">
-                                                      <input class="form-control" id="locality"></input>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="administrative_area_level_1" class="col-sm-2 control-label">State</label>
-                                                <div class="col-sm-10">
-                                                      <input class="form-control" id="administrative_area_level_1"></input>
-                                                </div>
-                                            </div>
-                                        </div>
-                                            
-                                      </div>
-                                      <div class="directionSubgroup">
-                                          <div>
-                                            <div class="form-group">
-                                                <label for="country" class="col-sm-2 control-label">Country</label>
-                                                <div class="col-sm-10">
-                                                      <input class="form-control" id="country"></input>
-                                                </div>
-                                              </div>
-                                              
-                                              <div class="form-group">
-                                                <label for="postal_code" class="col-sm-2 control-label">Zip Code</label>
-                                                <div class="col-sm-10">
-                                                      <input class="form-control" id="postal_code" ></input>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div> 
-                                      <div class="addressAutoCompleteContainer" id="complement">
-                                        <label class="col-sm-2 control-label">Reference</label>
-                                        <input class="form-control" id="complementText" placeholder="Please enter additional information If needed to deliver your order . Ex. Office #, Warehouse #, Deliver with Appointment, etc.
-                                        " onchange="validateLength('complement')"   onFocus="geolocate()" type="text"></input>
-                                    </div>   
-                                </form>
-                            </div>
-                            
-                        </div>
-                    </div>
-                <div id="map" >
-
-                </div>
-                <div id="Instructions" class="popup mfp-with-anim mfp-hide tm-bg-gray">
-                    <a href="#" class="tm-close-popup">
-                        Return home
-                        <i class="fas fa-times"></i>
-                    </a>
-                    <div>
-                        <h1 id="instructionTitle">How to use this web app</h1>
-                        <ol>
-                            <li>Open the address template.  <i class="fas fa-1x fa-pen-square "></i></li>
-                            <li>Select if the customer is “Consumer” or “Commercial/Distribution”.</li>
-                            <li>
-                                Fill the required customer information:
-                                <ul >
-                                    <li>Company (Only for Commercial/Distribution)</li>
-                                    <li>Contact (POC)</li>
-                                    <li>Email:</li>
-                                    <li>Telephone number:</li>
-                                    If you see a green check mark (<i class="fas fa-check-circle" style=" color: #22ff1f;"></i> ) it means the information has been verified, if not, you will receive a warning message (  <i class="fas fa-exclamation-circle" style="color: #fa0a26;"></i>), so please double check the information.
-                                </ul>
-                            </li>
-                            <li>Put the address you want to validate in front of Search your address:<br>The app will automatically verify the data and will show all the details, including the exact location in Google Maps.</li>
-                            <li>Now you will see all the information you entered/verified below Ship to:<br>
-                                Note that all components of the information must have a green check mark on the right side, a red exclamation mark means there is still an error.</li>
-                            <li>If you want to copy the organized information in your clipboard, you can do so by clicking the Copy information button.</li>
-                        </ol>
-
-                    </div>
-                </div>
-                <!-- <script defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg &callback=initMap">
-                </script> -->
-            </div>
-
-            <div id="receiver" class="popup mfp-with-anim mfp-hide tm-bg-gray">
-
-            </div>
-
-            <div id="about" class="popup mfp-with-anim mfp-hide tm-bg-gray">
-
-            </div>
-
-            <div id="contact" class="popup mfp-with-anim mfp-hide tm-bg-gray">
-
-            </div>
+            
         </div>
 
         <footer class="tm-footer">
             <span>Copyright &copy;  2021 version 2.0.3-beta</span>
             <span>Web Developed by Ruach Technologies</span>
         </footer>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/templatemo-script.js"></script>
+
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&key=AIzaSyAPYVrosQdnYM_hA9ALUN3cVQIF_L3NIxg&libraries=places"></script>
-        <script src="js/script.js"> </script>  
         
-        
-        <script>    
-            var input = document.querySelector("#phonePrefix");
-           
-            window.intlTelInput(input, {
-                autoHideDialCode:false,
-                nationalMode: false,
-                preferredCountries:['co','ar','cl','mx','pe','us'],
-                initialCountry: "co",
-                geoIpLookup: function(callback) {
-                    $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
-                    var countryCode = (resp && resp.country) ? resp.country : "us";
-                    callback(countryCode);
-                    });
-                },
-                utilsScript: "./js/utils.js?1613236686837" // just for formatting/placeholders etc
-                });
-               
-        </script>
+
     </body>
 </html>

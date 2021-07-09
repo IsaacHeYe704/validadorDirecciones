@@ -109,7 +109,7 @@ a {
 .tm-nav-item {
     list-style: none;
     margin: 22px;  
-    
+    cursor: pointer;
 }
 
 .tm-nav-link {
@@ -143,13 +143,22 @@ a {
 }
 
 .tm-container {
+    height: 50vh;
     max-width: 1254px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto 135px;
 }
+@media (min-width: 600px) {
+    .tm-container{
+        padding-top: 100px;
 
+    }
+  }
 .tm-footer {
+    /* width: 100vw;
+    position: absolute;
+    bottom: 0; */
     display: flex;
     justify-content: space-between;
     padding: 25px;
