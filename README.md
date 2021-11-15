@@ -22,5 +22,21 @@ when you select a country implementation you might land on the following landing
 3. Copy to clipboard the template information.
 4. Send via email the template information.
 ![Screenshot](img/myAddressLnading.png)
+
+
+### template
+the tamplate section of the page is where you can add all the customer information and validate it,
+validations are:
+1. Company name must be less than 30 digits long.
+2. Contact name must be less than 30 digits long.
+3. Email must be less than  30 digits long and contain ".","@"
+4. phone number must be less than 30 digits long and numeric type of input.
+5. address input is an autocomplete field.
+
+![Screenshot](img/instructions.png)
+
+
+
 ## IMPLEMENTATION
 My address validator is built on a  free css template and pure JavaScript, during 2022 we are looking to migrate into  Reactjs but the priority is growing functionality. 
+address input and validation is made by using google places api, map generator is possible thanks to google maps api.
