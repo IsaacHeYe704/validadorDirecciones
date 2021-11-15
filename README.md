@@ -33,7 +33,7 @@ validations are:
 4. phone number must be less than 30 digits long and numeric type of input.
 5. address input is an autocomplete field.
 
-![Screenshot](img/instructions.png)
+![Screenshot](img/template.png)
 
 
 
