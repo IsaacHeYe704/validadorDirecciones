@@ -1,6 +1,6 @@
 # My address validator
 
-My address validator is a web application winner at Dell Global Operations innovation Olympics 2021, 
+My address validator is a web application winner at *Dell Global Operations innovation Olympics 2021*, 
 
 It is looking to accomplish:  
 
